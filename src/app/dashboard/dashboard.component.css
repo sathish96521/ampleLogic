@@ -1,0 +1,57 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ccc;
+}
+
+.container {
+  height: 80%;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ccc;
+}
+
+.footer-left,
+.footer-right {
+  flex: 1;
+  text-align: left;
+  padding: 0%;
+}
+
+.footer-center {
+  flex: 2;
+  text-align: center;
+}
+
+.toggle-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 0;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initial hidden position */
+  background-color: #333;
+  overflow-x: hidden;
+  transition: 0.3s;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}

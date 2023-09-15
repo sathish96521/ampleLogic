@@ -1,0 +1,32 @@
+<div style="position: absolute; bottom: 12%; right: 1%;">
+    <button (click)="togglePopup()">
+        <a href="#">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+        <span *ngIf="isPopupVisible"></span>
+        <span *ngIf="!isPopupVisible"></span>
+    </button>
+</div>
+<div *ngIf="isPopupVisible">
+    <div *ngIf="popupData">
+        <div class="popup">
+            <div>
+                <img src="../../assets/images/icon.png" alt="progrssBar icon">
+            </div>
+            <div class="progress-container">
+                <div>
+                    <div class="progress-container">
+                        <div class="progress" [style.width.%]="progressValue"></div>
+                    </div>
+                    <button style="position: absolute; bottom: 12%;" (click)="startProgress()">Start Progress</button>
+                </div>
+            </div>
+
+            <!-- <div style="padding-top: 10px;">
+                <h4>Migrating data to Selected envirorment</h4>
+                <progress [value]="progressValue" max="100"></progress>
+            </div>
+            <button (click)="toggleProgress()">Toggle Progress</button> -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+.popup {
+  position: fixed;
+  height: 10%;
+  bottom: 3%;
+  background-color: white;
+  width: 100%;
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+
+.progress-container {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.progress {
+  height: 12px;
+  background-color: #007bff;
+}
