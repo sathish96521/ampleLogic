@@ -17,10 +17,14 @@
                 <div>
                     <div class="progress-container">
                         <div class="progress" [style.width.%]="progressValue"></div>
+                        <span class="progress-text">{{ progressValue }}%</span>
                     </div>
                     <button style="position: absolute; bottom: 12%;" (click)="startProgress()">Start Progress</button>
+                    <div *ngIf="progressValue === 100" class="success-message">
+                        Success! Progress is complete.
+                      </div>
                 </div>
-            </div>
+            </div>  
         </div>
     </div>
 </div>

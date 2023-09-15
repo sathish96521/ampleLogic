@@ -26,12 +26,38 @@ export class PopupComponent implements OnInit {
   startProgress() {
     this.isProgressActive = true;
     this.progressValue = 100;
+    this.incrementProgress();
   }
 
   resetProgress() {
     this.isProgressActive = false;
     this.progressValue = 0;
   }
+
+  // private incrementProgress() {
+  //   if (this.isProgressActive && this.progressValue < 100) {
+  //     setTimeout(() => {
+  //       this.progressValue += 1;
+  //       this.incrementProgress(); 
+  //     }, 100);
+  //   }
+  // }
+  private incrementProgress() {
+    const interval = 50; // Adjust the interval (in milliseconds) to control the speed
+    const incrementAmount = 1; // Adjust the increment amount to control the granularity
+
+    const increment = () => {
+      if (this.isProgressActive && this.progressValue < 100) {
+        setTimeout(() => {
+          this.progressValue += incrementAmount;
+          increment();
+        }, interval);
+      }
+    };
+
+    increment();
+  }
+ 
   // constructor() { }
 
   // ngOnInit(): void {
